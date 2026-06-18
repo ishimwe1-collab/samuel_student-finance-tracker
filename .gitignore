@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+.vscode/
+.env
+.cache/
+dist/
+coverage/
+*.log
+thumbs.db

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Finance Tracker</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <h1>Student Finance Tracker</h1>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#records">Records</a></li>
+          <li><a href="#add">Add</a></li>
+          <li><a href="#settings">Settings</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="dashboard" class="panel" aria-labelledby="dash-heading">
+      <h2 id="dash-heading">Dashboard</h2>
+      <div id="stats" class="stats"></div>
+    </section>
+
+    <section id="records" class="panel" aria-labelledby="records-heading">
+      <h2 id="records-heading">Records</h2>
+      <div class="controls">
+        <label>Search (regex): <input id="search" type="text" placeholder="e.g. \.\d{2}\b"></label>
+        <label><input id="ignore-case" type="checkbox" checked> Ignore case</label>
+        <label>Sort: <select id="sort">
+          <option value="date_desc">Date ↓</option>
+          <option value="date_asc">Date ↑</option>
+          <option value="desc_asc">Description A→Z</option>
+          <option value="desc_desc">Description Z→A</option>
+          <option value="amount_desc">Amount ↓</option>
+          <option value="amount_asc">Amount ↑</option>
+        </select></label>
+        <button id="import-json" type="button">Import JSON</button>
+        <button id="export-json" type="button">Export JSON</button>
+      </div>
+      <div id="table-wrapper" class="table-wrapper" role="region" aria-live="polite"></div>
+    </section>
+
+    <section id="add" class="panel" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add / Edit Transaction</h2>
+      <form id="record-form">
+        <input type="hidden" id="record-id">
+        <div class="row">
+          <label for="description">Description</label>
+          <input id="description" name="description" required>
+          <div class="error" id="err-description"></div>
+        </div>
+        <div class="row">
+          <label for="amount">Amount</label>
+          <input id="amount" name="amount" inputmode="decimal" required>
+          <div class="error" id="err-amount"></div>
+        </div>
+        <div class="row">
+          <label for="category">Category</label>
+          <input id="category" name="category" list="cat-list" required>
+          <datalist id="cat-list">
+            <option>Food</option>
+            <option>Books</option>
+            <option>Transport</option>
+            <option>Entertainment</option>
+            <option>Fees</option>
+            <option>Other</option>
+          </datalist>
+          <div class="error" id="err-category"></div>
+        </div>
+        <div class="row">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required>
+          <div class="error" id="err-date"></div>
+        </div>
+        <div class="actions">
+          <button type="submit">Save</button>
+          <button type="button" id="reset-form">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="settings" class="panel" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Settings</h2>
+      <form id="settings-form">
+        <label for="base-currency">Base currency</label>
+        <input id="base-currency" value="USD">
+        <label for="rate-eur">Rate EUR</label>
+        <input id="rate-eur" inputmode="decimal" value="0.92">
+        <label for="rate-gbp">Rate GBP</label>
+        <input id="rate-gbp" inputmode="decimal" value="0.81">
+        <div class="actions">
+          <button type="submit">Save Settings</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="about" class="panel" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Student Finance Tracker — a minimal accessible app. Contact: <a href="https://github.com/your-username">GitHub</a>, <a href="mailto:your@email">email</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Student Finance Tracker</div>
+  </footer>
+
+  <div id="aria-status" role="status" aria-live="polite" class="visually-hidden"></div>
+  <script type="module" src="scripts/state.js"></script>
+</body>
+</html>

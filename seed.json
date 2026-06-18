@@ -1,0 +1,12 @@
+[
+  {"id":"txn_1","description":"Lunch at cafeteria","amount":12.5,"category":"Food","date":"2025-09-25","createdAt":"2025-09-25T09:00:00Z","updatedAt":"2025-09-25T09:00:00Z"},
+  {"id":"txn_2","description":"Chemistry textbook","amount":89.99,"category":"Books","date":"2025-09-23","createdAt":"2025-09-23T10:00:00Z","updatedAt":"2025-09-23T10:00:00Z"},
+  {"id":"txn_3","description":"Bus pass","amount":45.0,"category":"Transport","date":"2025-09-20","createdAt":"2025-09-20T08:00:00Z","updatedAt":"2025-09-20T08:00:00Z"},
+  {"id":"txn_4","description":"Coffee with friends","amount":8.75,"category":"Entertainment","date":"2025-09-28","createdAt":"2025-09-28T12:00:00Z","updatedAt":"2025-09-28T12:00:00Z"},
+  {"id":"txn_5","description":"Library late fee","amount":5.0,"category":"Fees","date":"2025-09-19","createdAt":"2025-09-19T11:00:00Z","updatedAt":"2025-09-19T11:00:00Z"},
+  {"id":"txn_6","description":"Groceries for week","amount":34.2,"category":"Food","date":"2025-09-27","createdAt":"2025-09-27T15:00:00Z","updatedAt":"2025-09-27T15:00:00Z"},
+  {"id":"txn_7","description":"Concert ticket","amount":60.0,"category":"Entertainment","date":"2025-09-15","createdAt":"2025-09-15T20:00:00Z","updatedAt":"2025-09-15T20:00:00Z"},
+  {"id":"txn_8","description":"Notebook pack","amount":6.99,"category":"Books","date":"2025-09-10","createdAt":"2025-09-10T09:30:00Z","updatedAt":"2025-09-10T09:30:00Z"},
+  {"id":"txn_9","description":"Taxi to campus","amount":18.5,"category":"Transport","date":"2025-09-29","createdAt":"2025-09-29T07:15:00Z","updatedAt":"2025-09-29T07:15:00Z"},
+  {"id":"txn_10","description":"Snack: coffee coffee","amount":3.5,"category":"Food","date":"2025-09-30","createdAt":"2025-09-30T09:00:00Z","updatedAt":"2025-09-30T09:00:00Z"}
+]

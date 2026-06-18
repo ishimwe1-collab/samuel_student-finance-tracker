@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tests</title></head><body>
+<h1>Validator quick tests</h1>
+<script type="module">
+import {patterns, validateRecord} from './scripts/validators.js';
+const ok = validateRecord({description:'Lunch',amount:1.2,date:'2025-09-01',category:'Food'});
+console.log('valid should be empty', ok);
+console.log('duplicate-word regex test', patterns.duplicateWord.test('coffee coffee'));
+alert('Open console for test results');
+</script>
+</body></html>
