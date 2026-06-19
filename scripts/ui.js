@@ -26,11 +26,27 @@ export function renderStats(records, container, settings = {}) {
   const count = records.length;
   const counts = records.reduce((acc, r) => { acc[r.category] = (acc[r.category] || 0) + 1; return acc; }, {});
   const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
-  container.innerHTML = `
-    <div class="stat">Total: <strong>${total.toFixed(2)} ${settings.currency || 'USD'}</strong></div>
-    <div class="stat">Records: <strong>${count}</strong></div>
-    <div class="stat">Top category: <strong>${top ? top[0] : '—'}</strong></div>
-  `;
+  const cap = Number(settings.budgetCap || 0);
+const remaining = cap - total;
+
+const budgetMessage =
+  remaining >= 0
+    ? `Remaining Budget: ${remaining.toFixed(2)}`
+    : `Over Budget: ${Math.abs(remaining).toFixed(2)}`;
+container.innerHTML = `
+  <div class="stat">Total: <strong>${total.toFixed(2)} ${settings.currency || 'USD'}</strong></div>
+
+  <div class="stat">Records: <strong>${count}</strong></div>
+
+  <div class="stat">Top category: <strong>${top ? top[0] : '—'}</strong></div>
+
+  <div
+    class="stat"
+    role="status"
+    aria-live="${remaining >= 0 ? 'polite' : 'assertive'}">
+    <strong>${budgetMessage}</strong>
+  </div>
+`;
 }
 
 export function fillForm(formEl, record) {
