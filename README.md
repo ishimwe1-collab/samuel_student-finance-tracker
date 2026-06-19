@@ -216,7 +216,10 @@ GitHub Pages URL:
 
 https://ishimwe1-collab.github.io/samuel_student-finance-tracker/
 
----
+
+## Live Video Demo
+
+link to video: https://youtu.be/3DbHTWmNBGQ
 
 ## Conclusion
 
