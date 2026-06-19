@@ -34,7 +34,10 @@ function render() {
   const re = compileRegex(searchInput.value, flags);
   const sorted = getSorted(records, sortSel.value);
   renderTable(sorted, tableWrapper, { re });
-  renderStats(records, statsEl, { currency: document.getElementById('base-currency').value });
+renderStats(records, statsEl, {
+  currency: document.getElementById('base-currency').value,
+  budgetCap: document.getElementById('budget-cap').value
+});
 }
 
 form.addEventListener('submit', e => {
